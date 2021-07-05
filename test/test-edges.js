@@ -135,5 +135,4 @@ describe('Edge cases', () => {
     const encoded = encodeNode(node)
     assert.deepEqual(decodeNode(encoded), node)
   })
-
 })
