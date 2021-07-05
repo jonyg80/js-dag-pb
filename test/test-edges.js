@@ -48,7 +48,7 @@ describe('Edge cases', () => {
 
   it('encode tsize >=uint32', () => {
     const node = {
-      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 6779297111 }],
+      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 2813203578 }],
       Data: new Uint8Array([8, 1])
     }
     const encoded = encodeNode(node)
