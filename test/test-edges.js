@@ -66,7 +66,31 @@ describe('Edge cases', () => {
 
   it('encode 1.8gb tsize >=uint32', () => {
     const node = {
-      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 1932735283.2 }],
+      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 1932735283 }],
+      Data: new Uint8Array([8, 1])
+    }
+    const encoded = encodeNode(node)
+    assert.deepEqual(decodeNode(encoded), node)
+  })
+  it('encode 1.5gb tsize >=uint32', () => {
+    const node = {
+      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 1610612736 }],
+      Data: new Uint8Array([8, 1])
+    }
+    const encoded = encodeNode(node)
+    assert.deepEqual(decodeNode(encoded), node)
+  })
+  it('encode 1gb tsize >=uint32', () => {
+    const node = {
+      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 1073741824 }],
+      Data: new Uint8Array([8, 1])
+    }
+    const encoded = encodeNode(node)
+    assert.deepEqual(decodeNode(encoded), node)
+  })
+  it('encode 3gb tsize >=uint32', () => {
+    const node = {
+      Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 3221225472 }],
       Data: new Uint8Array([8, 1])
     }
     const encoded = encodeNode(node)
