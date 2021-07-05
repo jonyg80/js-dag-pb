@@ -54,7 +54,7 @@ describe('Edge cases', () => {
     const encoded = encodeNode(node)
     assert.deepEqual(decodeNode(encoded), node)
   })
-  
+
   it('encode 2gb tsize >=uint32', () => {
     const node = {
       Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 2147483648 }],
@@ -63,7 +63,7 @@ describe('Edge cases', () => {
     const encoded = encodeNode(node)
     assert.deepEqual(decodeNode(encoded), node)
   })
-  
+
   it('encode 1.8gb tsize >=uint32', () => {
     const node = {
       Links: [{ Hash: acidBytes, Name: 'big.bin', Tsize: 1932735283.2 }],
